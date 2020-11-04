@@ -1,18 +1,20 @@
 import styled from '@emotion/styled'
 
 export const Button = styled.button`
-  padding: 32px;
+  padding: 1em;
   background-color: #8884d8;
   font-size: 24px;
   border-radius: 4px;
-  color: black;
+  color: white;
   font-weight: bold;
   cursor: pointer;
   border: none;  
   transition: all 350ms ease-in-out;
   &:hover {
-    color: white;
-  }
+    background-color: white;
+    color: #8884d8;
+    border: 2px solid #8884d8;
+}
 `
 
 export const Input = styled.input`

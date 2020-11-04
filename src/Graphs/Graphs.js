@@ -10,6 +10,7 @@ import {
   Legend,
   AreaChart,
   Area,
+  ResponsiveContainer,
 } from "recharts";
 
 
@@ -25,7 +26,9 @@ const Graphs = (props) => {
           Here are the results for letter:{" "}
           <strong> {props.selectedL.toUpperCase()} </strong>
         </Header>
-        <BarChart width={600} height={400} data={graphData}>
+    
+        <ResponsiveContainer width="90%" aspect={3}>
+        <BarChart width={500} height={300} data={graphData}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
           <YAxis />
@@ -33,8 +36,10 @@ const Graphs = (props) => {
           <Legend />
           <Bar dataKey="amount" fill="#8884d8" />
         </BarChart>
+        </ResponsiveContainer>
 
-        <AreaChart width={600} height={400} data={graphData}>
+        <ResponsiveContainer width="90%" aspect={3}>
+        <AreaChart width={500} height={300} data={graphData}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
           <YAxis />
@@ -46,6 +51,7 @@ const Graphs = (props) => {
             fill="#8884d8"
           />
         </AreaChart>
+        </ResponsiveContainer>
 
       </GraphsCont>
     </>

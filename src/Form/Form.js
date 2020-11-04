@@ -12,23 +12,27 @@ const Form = (props) => {
 
   const inputChange = (e) => {
       let value = e.target.value;
+      value = value.replace(/[^A-Za-z]/ig, '')
       props.inputChange(value);
   }
 
     return (
         <FormDiv onSubmit={handleSubmit(onSubmit)}>
             <label> Enter One English Letter: </label>
-            <Input onChange={inputChange} ref={register}  type="text" name='main' maxLength="1"/>
+            <Input value={props.input} onChange={inputChange} ref={register}  type="text" name='main' maxLength="1"/>
             <Button> You Got This! </Button>
         </FormDiv>
     )
 }
 
+const mapStateToProps = state => ({
+    input: state.data.input
+})
 
 const mapDispatchToProps = dispatch => ({
     onSubmit: (input) => dispatch(actions.sendData(input)),
     inputChange: (input) => dispatch(actions.saveInput(input))
   })
 
-export default connect('',mapDispatchToProps)(Form);
+export default connect(mapStateToProps,mapDispatchToProps)(Form);
 

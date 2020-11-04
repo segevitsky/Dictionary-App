@@ -1,7 +1,6 @@
 import Graphs from './Graphs/Graphs';
 import Form from './Form/Form';
 import styled from '@emotion/styled'
-import { device } from './device';
 
 const App = () => {
 
@@ -20,13 +19,12 @@ export default App;
 
 
 const AppCont = styled.div`
-  @media ${device.mobileS} {
-  display: grid;  
+@media (min-width: 320px) {
+  display: grid;
 }
-  @media ${device.tablet} {
+@media (min-width: 768px) {
   display: flex;
-
-  } 
+  }
 `;
 
 const Header = styled.div`
@@ -38,11 +36,11 @@ const Header = styled.div`
   justify-content: center;
   font-size: 1em;
   color: white;
-  width: 50vw;
-  @media ${device.mobileS} {
+  @media (min-width: 320px) {
+    width: 100vw;
+  }
+  @media (min-width: 768px) {
+    width: 50vw;
 
   }
-  @media ${device.tablet} {
-
-  } 
 `;
