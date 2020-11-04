@@ -1,0 +1,1 @@
+export { sendData,saveInput } from './sendData';
