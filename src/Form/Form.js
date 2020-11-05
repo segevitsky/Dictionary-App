@@ -1,10 +1,12 @@
 import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../store/actions/index';
 import { Button, Input, FormDiv } from './formStyles';
 
 const Form = (props) => {
   const {register, handleSubmit} = useForm();
+  const [inValid, setInvalid] = useState('');
 
   const onSubmit= data => {
     props.onSubmit(data.main);
@@ -13,21 +15,31 @@ const Form = (props) => {
 
   const inputChange = (e) => {
       let value = e.target.value;
-      value = value.replace(/[^A-Za-z]/ig, '')
-      props.inputChange(value);
+      // value = value.replace(/[^A-Za-z]/ig, '')
+      let b = /^[a-zA-Z]*$/.test(value)
+      if (b === false) {
+        setInvalid('**Please enter only English Letters Only')
+      } else {
+        setInvalid('')
+        props.inputChange(value);
+      }
   }
+
+
 
     return (
         <FormDiv onSubmit={handleSubmit(onSubmit)}>
             <label> Enter One English Letter: </label>
-            <Input value={props.input} onChange={inputChange} ref={register}  type="text" name='main' maxLength="1"/>
-            <Button> You Got This! </Button>
+            <Input value={props.input} onChange={inputChange} ref={register}  type="text" name='main' maxLength="1" required/>
+            <p style={{ color: '#8884d8'}}> {inValid} </p>
+            <Button> Submit </Button>
         </FormDiv>
     )
 }
 
 const mapStateToProps = state => ({
-    input: state.data.input
+    input: state.data.input,
+    words: state.data.sampleWords
 })
 
 const mapDispatchToProps = dispatch => ({

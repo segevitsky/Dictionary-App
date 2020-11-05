@@ -8,8 +8,8 @@ const initialState = {
     data: dictionaryData,
     answer: {},
     graphData: [],
-    input: ''
-
+    input: '',
+    sampleWords: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -25,7 +25,8 @@ const reducer = (state = initialState, action) => {
           return {
               ...state,
               answer: answerObj.answer,
-              graphData: answerObj.graphData
+              graphData: answerObj.graphData,
+              sampleWords: answerObj.sampleWords
           } 
         
         default:

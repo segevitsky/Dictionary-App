@@ -1,13 +1,23 @@
 import Graphs from './Graphs/Graphs';
 import Form from './Form/Form';
-import styled from '@emotion/styled'
+import { AppCont,Headline,Header, WordsDiv, WordDesign  } from './appStyles';
+import { connect } from 'react-redux';
 
-const App = () => {
+
+
+const App = (props) => {
+  console.log(props.headlines)
+  const randomWords = props.words.map((wordArray,i) => (
+    <WordDesign key={i}> {wordArray[0]} </WordDesign>
+  ))
 
   return (
     <AppCont>
       <Header>
-        <h1> Dictionary App </h1>
+        <WordsDiv> 
+          {randomWords} 
+        </WordsDiv>
+        <Headline> Dictionary App </Headline>
         <Form/>
       </Header>
        <Graphs />
@@ -15,32 +25,10 @@ const App = () => {
   );
 }
 
-export default App;
+
+const mapStateToProps = state => ({
+  words: state.data.sampleWords,
+})
 
 
-const AppCont = styled.div`
-@media (min-width: 320px) {
-  display: grid;
-}
-@media (min-width: 768px) {
-  display: flex;
-  }
-`;
-
-const Header = styled.div`
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 1em;
-  color: white;
-  @media (min-width: 320px) {
-    width: 100vw;
-  }
-  @media (min-width: 768px) {
-    width: 50vw;
-
-  }
-`;
+export default connect(mapStateToProps,'')(App);

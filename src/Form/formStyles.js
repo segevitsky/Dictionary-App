@@ -19,7 +19,6 @@ export const Input = styled.input`
     display: block;
     box-sizing: border-box;
     width: 100%;
-    border-radius: .25em;
     padding: .5em 1em;
     margin-bottom: 1em;
     font-size: 1.2em;
