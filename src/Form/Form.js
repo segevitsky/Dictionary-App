@@ -31,7 +31,7 @@ const Form = (props) => {
         <FormDiv onSubmit={handleSubmit(onSubmit)}>
             <label> Enter One English Letter: </label>
             <Input value={props.input} onChange={inputChange} ref={register}  type="text" name='main' maxLength="1" required/>
-            <P style={{ color: '#8884d8'}}> {inValid} </P>
+            <P> {inValid} </P>
             <Button> Submit </Button>
         </FormDiv>
     )
