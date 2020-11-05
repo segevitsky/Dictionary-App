@@ -34,7 +34,7 @@ const Graphs = (props) => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="amount" fill="#8884d8" />
+          <Bar dataKey="Number of words" fill="#8884d8" />
         </BarChart>
         </ResponsiveContainer>
 
@@ -46,7 +46,7 @@ const Graphs = (props) => {
           <Tooltip />
           <Area
             type="monotone"
-            dataKey="amount"
+            dataKey="Number of words"
             stroke="#8884d8"
             fill="#8884d8"
           />
