@@ -1,18 +1,18 @@
 export const findAnswers = (state,action) => {
-    const answerObj = {"Words Starts with": '',"Ends with": '', "Appears In": '', "In Conjunction": ''  }
+    const answerObj = {Starts: '', Ends: '', Appears: '', Conjunction: ''  }
     for (let i = 0; i < state.data.length; i++) {
       if (state.data[i].startsWith(action.input)) {
-        answerObj["Words Starts with"]++;
+        answerObj.Starts++;
       }
       if (state.data[i].endsWith(action.input)) {
-        answerObj["Ends with"]++;
+        answerObj.Ends++;
       }
       if (state.data[i].includes(action.input)) {
-        answerObj["Appears In"]++;
+        answerObj.Appears++;
       }
       for (let j = 0; j < state.data[i].length; j++) {
         if ( (state.data[i][j] === action.input) && (state.data[i][j] === state.data[i][j + 1]) ) {
-          answerObj["In Conjunction"]++;
+          answerObj.Conjunction++;
           // answerObj.counterCojArr.push(dic[i])
         }
       }

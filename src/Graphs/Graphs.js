@@ -23,14 +23,14 @@ const Graphs = (props) => {
       <GraphsCont>
         <Header>
           {" "}
-          Here are the results for letter:{" "}
+          Here are the results for :{" "}
           <strong> {props.selectedL.toUpperCase()} </strong>
         </Header>
     
-        <ResponsiveContainer width="90%" aspect={3}>
+        <ResponsiveContainer width="80%" height="80%">
         <BarChart width={500} height={300} data={graphData}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
+          <XAxis dataKey="name"/>
           <YAxis />
           <Tooltip />
           <Legend />
@@ -38,7 +38,7 @@ const Graphs = (props) => {
         </BarChart>
         </ResponsiveContainer>
 
-        <ResponsiveContainer width="90%" aspect={3}>
+        <ResponsiveContainer width="80%" height="80%">
         <AreaChart width={500} height={300} data={graphData}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
