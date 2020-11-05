@@ -39,9 +39,4 @@ export const findAnswers = (state,action) => {
   }
 
 
-  export const randomFunc = (array) => {
-    let randomIndex = Math.floor(Math.random() * array.length);
-    return array[randomIndex]
-  }
-
   

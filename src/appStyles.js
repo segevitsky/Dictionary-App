@@ -1,14 +1,13 @@
-import styled from '@emotion/styled'
+import styled from "@emotion/styled";
 
 export const AppCont = styled.div`
-@media (min-width: 320px) {
-  display: grid;
-}
-@media (min-width: 768px) {
-  display: flex;
+  @media (min-width: 320px) {
+    display: grid;
+  }
+  @media (min-width: 768px) {
+    display: flex;
   }
 `;
-
 
 export const Header = styled.div`
   background-image: linear-gradient(#282c34, #fff);
@@ -27,22 +26,26 @@ export const Header = styled.div`
   }
 `;
 
-
 export const Headline = styled.h1`
-    font-size: 4em;
-    margin-bottom: 2em;
-    text-align: center;
-`
+  font-size: 4em;
+  margin-bottom: 2em;
+  text-align: center;
+`;
 
 export const WordsDiv = styled.div`
+  @media (min-width: 320px) {
+    display: none;
+  }
+  @media (min-width: 768px) {
     display: flex;
     width: 100%;
     justify-content: space-around;
     transition: all 350ms ease-in-out;
+  }
+`;
 
-    `;
-    
-    export const WordDesign = styled.h4`
-    padding: 3em 2em;
-    box-shadow: 2px 2px rgba(0,0,0,0.23);
-`
+export const WordDesign = styled.h4`
+  padding: 3em 2em;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.23);
+  transition: all 350ms ease-in-out;
+`;

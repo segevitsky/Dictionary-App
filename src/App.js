@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 
 
 const App = (props) => {
-  console.log(props.headlines)
   const randomWords = props.words.map((wordArray,i) => (
     <WordDesign key={i}> {wordArray[0]} </WordDesign>
   ))

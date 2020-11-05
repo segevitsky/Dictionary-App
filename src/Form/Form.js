@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../store/actions/index';
-import { Button, Input, FormDiv } from './formStyles';
+import { Button, Input, FormDiv, P } from './formStyles';
 
 const Form = (props) => {
   const {register, handleSubmit} = useForm();
@@ -18,7 +18,7 @@ const Form = (props) => {
       // value = value.replace(/[^A-Za-z]/ig, '')
       let b = /^[a-zA-Z]*$/.test(value)
       if (b === false) {
-        setInvalid('**Please enter only English Letters Only')
+        setInvalid('**Please enter English Letters Only')
       } else {
         setInvalid('')
         props.inputChange(value);
@@ -31,7 +31,7 @@ const Form = (props) => {
         <FormDiv onSubmit={handleSubmit(onSubmit)}>
             <label> Enter One English Letter: </label>
             <Input value={props.input} onChange={inputChange} ref={register}  type="text" name='main' maxLength="1" required/>
-            <p style={{ color: '#8884d8'}}> {inValid} </p>
+            <P style={{ color: '#8884d8'}}> {inValid} </P>
             <Button> Submit </Button>
         </FormDiv>
     )

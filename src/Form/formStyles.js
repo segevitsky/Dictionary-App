@@ -31,3 +31,8 @@ export const FormDiv = styled.form`
     display: flex;
     flex-direction: column;
 `;
+
+
+export const P = styled.p`
+    color: tomato;
+`;
