@@ -7,6 +7,7 @@ justify-content: center;
 align-items: center;
 @media (min-width: 320px) {
     width: 100vw;
+    height: 100vh;
 }
 @media (min-width: 768px) {
     width: 50vw;

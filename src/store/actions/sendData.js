@@ -8,7 +8,6 @@ export const saveInput = (input) => {
 }
 
 
-
 export const sendData = (input) => {
     return {
         type: actionTypes.SUBMIT_INPUT,

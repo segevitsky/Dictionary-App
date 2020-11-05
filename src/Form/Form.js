@@ -8,7 +8,6 @@ const Form = (props) => {
 
   const onSubmit= data => {
     props.onSubmit(data.main);
-    console.log(window);
     window.scrollBy(0, 900);
   }
 

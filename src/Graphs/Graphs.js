@@ -44,6 +44,7 @@ const Graphs = (props) => {
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
+          <Legend />
           <Area
             type="monotone"
             dataKey="Number of words"
