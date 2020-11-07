@@ -6,8 +6,9 @@ import { connect } from 'react-redux';
 
 
 const App = (props) => {
+  console.log(props.words);
   const randomWords = props.words.map((wordArray,i) => (
-    <WordDesign key={i}> {wordArray[0]} </WordDesign>
+    <WordDesign key={i}> {wordArray[i]} </WordDesign>
   ))
 
   return (
@@ -27,6 +28,7 @@ const App = (props) => {
 
 const mapStateToProps = state => ({
   words: state.data.sampleWords,
+  headlines: state.data.answer
 })
 
 

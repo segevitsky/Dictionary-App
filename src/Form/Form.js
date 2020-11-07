@@ -18,7 +18,7 @@ const Form = (props) => {
       // value = value.replace(/[^A-Za-z]/ig, '')
       let b = /^[a-zA-Z]*$/.test(value)
       if (b === false) {
-        setInvalid('**Please enter English Letters Only')
+        setInvalid('**Please enter English letters only')
       } else {
         setInvalid('')
         props.inputChange(value);
